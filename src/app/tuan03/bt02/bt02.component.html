@@ -1,0 +1,28 @@
+<h1>Tuan 03 - Bai 02</h1>
+<h1 class="bg-dark text-white text-uppercase">Tin tuc the thao trong ngay</h1>
+<div class="accordion" id="accordionExample">
+  <div *ngFor="let news of listNews" class="accordion-item">
+    <h2 class="accordion-header" id="headingOne-{{ news.id }}">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        [attr.data-bs-target]="news.target"
+        aria-expanded="true"
+        [attr.aria-controls]="news.control"
+      >
+        {{ news.title }}
+      </button>
+    </h2>
+    <div
+      id="{{ news.control }}"
+      class="accordion-collapse collapse show"
+      aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="accordion-body">
+        {{ news.content }}
+      </div>
+    </div>
+  </div>
+</div>
